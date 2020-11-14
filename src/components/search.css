@@ -1,0 +1,82 @@
+.root{
+    display: 'flex';
+    flex-wrap: 'wrap';
+    justify-content: 'space-around';
+    overflow: 'hidden';
+  
+  }
+  .gridList {
+    width: 500;
+    height: 450;
+  }
+  .body {
+      background-color: white !important;
+  }
+
+  .fruits{
+    background: linear-gradient(270deg, #6560ff -86% , #ffffff );
+    height: 14em !important;
+    border-radius: 3em !important;
+  }
+  .choco{
+    background: linear-gradient(90deg, #dc00ff -86% , #ffffff );
+    height: 14em !important;
+    border-radius: 3em !important;
+  }
+  .baby{
+    background: linear-gradient(180deg, #fff400 -86% , #ffffff );
+    height: 8em !important;
+    border-radius: 3em !important;
+
+  }
+  .cream {
+    background: linear-gradient(180deg, #00b5ff -86% , #ffffff );
+    height: 14.8em !important;
+    border-radius: 3em !important;
+  }
+  .healty {
+    background: linear-gradient(180deg, #ff3a3a -86% , #ffffff );
+    height: 14.8em;
+    border-radius: 3em !important;
+
+  }
+  .wine {
+    background: linear-gradient(180deg, #fff400 -86% , #ffffff );
+    height: 8em !important;
+    border-radius: 3em !important;
+
+  }
+  .photoForCategory{
+    height: 7em !important;
+    width: "-webkit-fill-available" !important;
+  }
+  .photoHealty {
+    
+      height: 7em !important;
+      width: "-webkit-fill-available" !important;
+    
+  }
+  .photoCream {
+    
+    height: 8em !important;
+    width: "-webkit-fill-available" !important;
+  
+}
+.fab{
+  margin-top: -5em !important;
+  /* padding: 2.5em !important; */
+  background-color: #ffefbb !important;
+  margin-left: -30px !important;
+}
+  .MuiPaper-root.MuiPaper-elevation5.MuiPaper-rounded{
+    border-radius: 3em !important;
+  }
+
+.MuiContainer-root.MuiContainer-maxWidthLg{
+width: 50%;
+} 
+.MuiFab-label{
+  margin-top: -9em !important;
+  margin-left: 10px !important;
+}
+

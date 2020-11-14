@@ -1,0 +1,42 @@
+.appBar{
+    top: auto !important ;
+    bottom:0 !important;
+    background-color: white !important;
+    
+}
+
+.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionFixed.MuiAppBar-colorPrimary.appBar.mui-fixed.MuiPaper-elevation4 {
+    height: 63px !important;
+}
+.MuiSvgIcon-root{
+    font-size: 1.6em !important;
+}
+
+.iconBottom{
+    color: #f78c00 !important;
+    margin-left: 26px !important;
+    margin-right: 30px !important ;
+ 
+}
+.MuiPaper-root.MuiAppBar-root.MuiAppBar-positionFixed.MuiAppBar-colorPrimary.appBar.mui-fixed.MuiPaper-elevation4 {
+    align-items: center !important;
+}
+
+.iconBottom:hover {
+    color: #ffaa3b !important;
+    
+}
+.my-node-enter {
+    opacity: 0;
+  }
+  .my-node-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+  }
+  .my-node-exit {
+    opacity: 1;
+  }
+  .my-node-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+  }

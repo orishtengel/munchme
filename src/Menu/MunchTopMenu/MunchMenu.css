@@ -1,0 +1,19 @@
+.menu {
+    justify-content: space-between;
+    width: 100%;
+    background-color: white !important;
+}
+.logo{
+    margin: -43px;
+    /* margin: 6px; */
+    height: 174px;
+    width: 149px;
+
+}
+.icon {
+    height: 64px;
+    margin-right: 42px;
+    /* margin-bottom: 35px; */
+    margin-top: 14px;
+    margin-left: -50px;
+}

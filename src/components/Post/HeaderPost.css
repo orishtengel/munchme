@@ -1,0 +1,16 @@
+.divider{
+    color: #f78c00 !important;
+    height: 2px !important;
+}
+.MuiTypography-root.MuiTypography-body1 {
+    margin-left: -110px!important;
+    margin-top: 6px !important;
+    font-size: 1.3em !important;
+    font-weight: 570 !important;
+    font-family: sans-serif !important;
+}
+.MuiButtonBase-root.MuiIconButton-root {
+    margin-top: -9px !important;
+    /* margin-left: 5px; */
+    margin-right: -16px !important;
+}

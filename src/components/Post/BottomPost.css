@@ -1,0 +1,17 @@
+.fastfood {
+        position: absolute;
+        overflow: hidden;
+        display: block;
+        z-index: 1;
+        top: 0; left: 0;
+        width: 50%;
+        color:purple;
+}
+.stars{
+    margin-top: -20px !important;
+    padding-bottom: 6px;
+   
+}
+.fa-star {
+    color: turquoise !important;
+}

@@ -1,0 +1,16 @@
+.addingredientsbutton {
+    background-color: #ffb700 !important;
+    border-width: 0 !important;
+    height: 55px !important;
+    cursor: pointer !important;
+    color: white !important;
+    border-radius: 87px !important;
+    box-shadow: -1px 2px 10px 0 #ffe761 !important;
+    margin: 8px !important;
+    font-weight: 400 !important;
+    padding: 15px !important;
+}
+
+.addingredientsbutton:hover {
+    background-color: #ffc301 !important;
+}

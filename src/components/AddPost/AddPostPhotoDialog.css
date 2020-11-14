@@ -1,0 +1,30 @@
+.sharebutton {
+    background-color: #ffb700 !important;
+    width: 93px !important;
+    border-width: 0 !important;
+    height: 55px !important;
+    cursor: pointer !important;
+    color: white !important;
+    border-radius: 87px !important;
+    /* box-shadow: 0 10px 40px 0 #ffe761; */
+    margin: 8px !important;
+    font-weight: 400 !important;
+}
+
+.sharebutton:hover {
+    background-color: #ffc301 !important;
+
+}
+.divider{
+    color: #f78c00 !important;
+    height: 2px !important;
+}
+/* 
+.MuiFormControl-root.MuiTextField-root{
+    margin-left: 8px !important;
+    margin-top: 11px !important;
+} */
+.tastesvg {
+    height: 150px !important;
+    width: 120px !important;
+}
