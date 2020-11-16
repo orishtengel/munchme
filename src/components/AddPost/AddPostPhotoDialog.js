@@ -25,7 +25,7 @@ export const AddPostPhoto = () => {
 
 return (<> 
    
-       
+      
             <FlexView style={{justifyContent:"space-between"}}>
                 <FlexView>
                     <IconButton style={{marginLeft:'-23px' }} onClick={close}>
@@ -47,7 +47,7 @@ return (<>
             <FlexView>
                 <h4>Choose photo's from your gallary</h4>
             </FlexView>
-    
+           
 
 
 </>)

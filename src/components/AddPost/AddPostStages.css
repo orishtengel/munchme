@@ -6,9 +6,11 @@
     cursor: pointer !important;
     color: white !important;
     border-radius: 87px !important;
-    box-shadow: 0 10px 40px 0 #ffe761;
-    margin: 8px !important;
-    font-weight: 400 !important;
+   
+    
+    font-weight: bold !important;
+    font-size: large;
+    
 }
 
 .sharefinalbutton:hover {
@@ -31,4 +33,10 @@
 
 .addstagebutton:hover {
     background-color: #ffc301 !important;
+}
+
+.fabshare{
+    color: #ffb700 !important ;
+    right: 20 !important;
+    position: 'fixed' !important
 }

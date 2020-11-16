@@ -1,14 +1,17 @@
-import { Button, Container, Dialog, DialogContent, DialogTitle, Divider, IconButton, MenuItem, Select, TextField } from '@material-ui/core'
+import { Button, Container, Dialog, DialogContent, DialogTitle, Divider, Fab, IconButton, MenuItem, Select, TextField } from '@material-ui/core'
 import React from 'react'
 import FlexView from 'react-flexview/lib'
 import './AddPostPhotoDialog.css'
 import KeyboardBackspaceOutlinedIcon from '@material-ui/icons/KeyboardBackspaceOutlined';
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, useFieldArray, useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import './AddPostStages.css'
 import { Stage } from './Stage';
 import { AddCircleOutline, AddCircleOutlineOutlined, AddCircleOutlineRounded } from '@material-ui/icons';
 import { AddPostContextStore } from '../../context/AddPostContext';
+import ShareIcon from '@material-ui/icons/Share';
+import { PostContextStore } from '../../context/PostContext';
+
 
 
 
@@ -16,35 +19,55 @@ import { AddPostContextStore } from '../../context/AddPostContext';
 export const AddPostStages = () => {
 
     const addPostContext = React.useContext(AddPostContextStore)
-    const {register, trigger, getValues, errors, setValue, control} = useForm({mode: 'onChange'})
+    const postContext = React.useContext(PostContextStore)
+    const {register, trigger, getValues, errors, control, setError} = useForm({mode: 'onChange',
+    defaultValues: {stages: [{picture: "", stage:""}]}})
+    const { fields, append, remove } = useFieldArray({
+       control,
+       name: "stages"
+     });
     const history = useHistory()
     const back = () => {
         history.push('/add/addPost')
     }
     const AddStage = () => {
-        addPostContext.dispatch({type : 'ADD_STAGE'})
+        append({picture: "" , stage: ""})
     }
-    console.log(addPostContext.ingredients)
-
-
-
+    const Share = () => {
+        addPostContext.share(getValues())
+        history.push('/')
+    }
 
     return (<> 
 
-     <IconButton style={{marginLeft:'-9px',marginTop:'10px' }} onClick={back}>
-                        <KeyboardBackspaceOutlinedIcon style={{color : "#ffb700"}}/>
-                    </IconButton>
+        <Container maxWidth="xl">
+        <FlexView className="justify">
+             <IconButton style={{marginLeft:'-9px',marginTop:'10px' }} onClick={back}>
+                        <KeyboardBackspaceOutlinedIcon className="orange"/>
+            </IconButton>
+           <button onClick={Share} style={{position: 'absolute', top: 10, right: 20}} className="sharefinalbutton">Share</button>
+         </FlexView>
+         </Container>
             <FlexView hAlignContent="center">
-                   
                 <h3>How to Make?</h3>
             </FlexView>
             <FlexView column hAlignContent="center">
-                {addPostContext.stages.map(stage => <Stage data={stage}/>)}
+            {fields.map((item, index) => <>
+                    <Stage
+                        register={register}
+                        data={item}
+                        key={index} 
+                        name="stages" 
+                        removeItem={remove}
+                        index={index}  />
+                     <br />
+                     </>)}
             </FlexView>
             <br/>
             <FlexView hAlignContent="center">
                  <Button onClick={AddStage} className = "addstagebutton"> Add Stage </Button>
             </FlexView>
+           
     
     </>)
 }

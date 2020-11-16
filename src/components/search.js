@@ -1,19 +1,26 @@
 import { Container, Fab, Grid, GridList, GridListTile, GridListTileBar, IconButton, ListSubheader, Paper } from '@material-ui/core'
 import React from 'react'
 import FlexView from 'react-flexview/lib'
+import { DialogPost } from './BackPost/DialogPost'
 import './search.css'
 
 export const Search = () => {
 
+    const [openDialog,setOpenDialog] = React.useState(false)
+
+    const openDialogFunction = () => {
+        setOpenDialog(true)
+    }
+    const closeDialog = () =>{
+        setOpenDialog(false)
+    }
     return(<>
      <div className="root">
      <br/>
-     
         <FlexView >
             <Container>
                 <Paper elevation={5}>
-                <FlexView className="fruits" hAlignContent="right">
-                    
+                <FlexView onClick={openDialogFunction} className="fruits" hAlignContent="right">
                     <img style={{marginTop:'6em'}} className="photoForCategory" src={`${process.env.PUBLIC_URL}/pablo-867.png`}/>
                 </FlexView>
                 </Paper>
@@ -58,6 +65,7 @@ export const Search = () => {
             </IconButton>
         </Fab>
         </FlexView>
+        <DialogPost open={openDialog} close={closeDialog}/>
         <br/>
     </div>
      </>)

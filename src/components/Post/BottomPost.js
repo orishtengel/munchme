@@ -9,7 +9,7 @@ import KitchenIcon from '@material-ui/icons/Kitchen';
 import FlexView from 'react-flexview/lib';
 
 
-export const BottomPost = () => {
+export const BottomPost = ({title,time,level}) => {
 
     const ratingChanged = (newRating) => {
         console.log(newRating);
@@ -18,12 +18,12 @@ export const BottomPost = () => {
     return (<> 
         <Container maxWidth='xl'>
             <FlexView style={{justifyContent:'space-between'}}>
-                 <h3>Pancake</h3>
+                 <h3>{title}</h3>
                  <FlexView>
                 <TimerOutlinedIcon style={{padding:'4px',height:'50px' }}/>
-                <h5>15min</h5>
+                 <h5>{time}</h5>
                 <KitchenIcon style={{padding:'4px',height:'50px' }}/>
-                <h5>expert</h5>
+                <h5>{level}</h5>
                 </FlexView>
             </FlexView>
             

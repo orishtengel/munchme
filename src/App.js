@@ -5,7 +5,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useLocation
 } from "react-router-dom";
 
 import FlexView from 'react-flexview/lib';
@@ -21,14 +22,31 @@ import { AddPost } from './components/AddPost/AddPost';
 import { AddPostStages } from './components/AddPost/AddPostStages';
 import { AddPostsRoutes } from './components/AddPost/AddPostsRoutes';
 import AddPostContext from './context/AddPostContext';
+import SessionContext from './context/SessionContext';
+import { Login } from './Login/Login';
+import { LoadingScreen } from './components/loadingPage/LoadingPage';
+import PostContext from './context/PostContext';
+
+
+
 
 
 const App = () => {
+  //const location = useLocation()
+
   return (
     <Palette>
       <Router>
+        <LoadingScreen/>
+        <SessionContext>
+          <Route path='/login'>
+          <Container maxWidth='xl' className="bodyPost">
+            <Login />
+          </Container>
+          </Route>
         <MunchMenu />
           <Switch>
+            <PostContext>
             <Route exact path="/">
               <Container maxWidth='xl'>
                   <Home />
@@ -41,12 +59,15 @@ const App = () => {
             </Route>
             <Route path="/add">
               <AddPostContext>
-                <AddPostsRoutes />
-              </AddPostContext>
-            
+                <Container  maxWidth="xl" className="bodyPost">
+                  <AddPostsRoutes /> 
+                </Container>
+              </AddPostContext>            
             </Route>
+            </PostContext>
           </Switch>
         <MunchBottonMenu/>
+        </SessionContext>
       </Router>
       
     </Palette>

@@ -1,33 +1,22 @@
 import React from 'react'
 import { Post } from './Post/post'
-import ReactCardFlip from 'react-card-flip';
 import FlexView from 'react-flexview/lib';
-import { BackPost } from './BackPost/BackPost';
+import { SessionContextStore } from '../context/SessionContext';
+import { PostContextStore } from '../context/PostContext';
 
 
 export const Home = () => {
+    const sessionContext = React.useContext(SessionContextStore)
+    const postContext = React.useContext(PostContextStore)
+    const getUser = (id) => {
 
-    const [isflipped,setisfliped] = React.useState(false)
-
-    const flip = () => {
-        setisfliped(true)
     }
-    const flipback = () => {
-        setisfliped(false)
-    }
-
-
     return(<>
-
-        <br/>
-    <ReactCardFlip isFlipped={isflipped}>
-        <FlexView onClick={flip} >
-            <Post/>
+        <FlexView column>
+            {postContext.homeposts.map((item,index) => <>
+            <Post key = {index} data = {item}/>
+           </>)}
         </FlexView>
-        <FlexView onClick={flipback}>
-            <BackPost/>
-        </FlexView>
-    </ReactCardFlip>
-   
+        <div style={{height:80}}></div>
      </>)
 }

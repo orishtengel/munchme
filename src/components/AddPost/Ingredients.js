@@ -6,37 +6,25 @@ import { Controller, useForm } from 'react-hook-form'
 import CancelIcon from '@material-ui/icons/Cancel';
 import { AddPostContextStore } from '../../context/AddPostContext'
 
-export const Ingredients = (props) => {
-
-    const {register, trigger, getValues, errors, setValue, control} = useForm({mode: 'onChange'})
-    const addPostContext = React.useContext(AddPostContextStore)
+export const Ingredients = ({register, data, index, key, name, removeItem}) => {
 
     const remove = () => {
-        addPostContext.dispatch({type:'REMOVE_INGREDIENT', id : props.data.id})
+        removeItem(index)
     }
 
     return (<> 
     <FlexView style={{justifyContent:"center"}}>
-        <Controller 
-        name="amount"
-        control={control}
-        as={
-        <TextField id="outlined-basic" label="Amount" variant="outlined" fullWidth type='number'
-                        inputRef={register({required: true, min: 0})} name='Amount' label='Amount' placeholder='Amount' style={{marginRight:'8px'}} />}/>
-         <Controller 
-        name="name"
-        control={control}
-        as={
-         <TextField  id="outlined-basic" label="Name" fullWidth variant="outlined"  
-                                    name='title' label='Name' placeholder='write Name'/>}/>
+        <TextField label="Amount" variant="outlined" fullWidth type='number'
+                    defaultValue={data.amount}
+                    inputRef={register({required: true, min: 0})} name={`${name}[${index}].amount`} 
+                    placeholder='Amount' style={{marginRight:'8px'}} />
+         <TextField label="Name" fullWidth variant="outlined" 
+                     name={`${name}[${index}].title`}
+                     defaultValue={data.title}
+                     inputRef={register()} placeholder='Write name'/>
         <IconButton onClick={remove}>
             <CancelIcon style={{color : "#ffb700"}}/>
         </IconButton>
-     </FlexView>
-
-     <br/>
-
-    
-    
+     </FlexView>    
     </>)
 }

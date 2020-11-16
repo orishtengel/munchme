@@ -68,15 +68,12 @@
   background-color: #ffefbb !important;
   margin-left: -30px !important;
 }
-  .MuiPaper-root.MuiPaper-elevation5.MuiPaper-rounded{
+  /* .MuiPaper-root.MuiPaper-elevation5.MuiPaper-rounded{
     border-radius: 3em !important;
-  }
+  } */
 
 .MuiContainer-root.MuiContainer-maxWidthLg{
 width: 50%;
 } 
-.MuiFab-label{
-  margin-top: -9em !important;
-  margin-left: 10px !important;
-}
+
 

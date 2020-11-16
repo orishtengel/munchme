@@ -14,3 +14,7 @@
 .addingredientsbutton:hover {
     background-color: #ffc301 !important;
 }
+.textfiledpost{
+    width: 100%;
+    color: white;
+}

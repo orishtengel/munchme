@@ -1,7 +1,10 @@
 .menu {
     justify-content: space-between;
     width: 100%;
-    background-color: white !important;
+}
+.appbar{
+    background: linear-gradient(45deg ,#fff1c1, #ffe8ee);
+
 }
 .logo{
     margin: -43px;

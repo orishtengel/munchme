@@ -1,0 +1,61 @@
+.loginGradient{
+    /* background: linear-gradient(176deg, #4d00a2, #ffbef1);  */
+    height: 100vh;
+}
+
+
+.kep-login-facebook { 
+    border-radius: 30px !important;
+    background-color: white !important;
+    color: #4c69ba !important;
+    box-shadow: 0px 0px 4px 0px white;
+    border-width: 0 !important;
+}
+
+.fa.fa-facebook {
+    border: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    padding: 6px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.typoHead{
+    font-size: 30px !important;
+    line-height: 40px !important;
+    letter-spacing: -1px!important;
+    font-weight: bold;
+    font-style:italic;
+    color: white;
+}
+
+.link{
+    margin: 3px;
+    color: black;
+}
+
+.terms {
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 2vh;
+    color: black;
+}
+.logoLogin{
+    margin-top: -109px;
+    margin-bottom: -70px;
+    margin-left: -9px;
+}
+.textfiledlogin{
+    color: white !important;
+}
+.MuiPaper-root.textfieldlogin.MuiPaper-elevation1.MuiPaper-rounded {
+    width: 100%;
+}
+
+.eating{
+    height: 200px;
+    position: absolute;
+    width: 250px;
+    bottom: 0;
+}

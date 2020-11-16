@@ -12,6 +12,7 @@ import { CSSTransition } from 'react-transition-group';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import { HomeOutlined } from '@material-ui/icons';
 import { AddPostPhotoDialog } from '../../components/AddPost/AddPostPhotoDialog';
+import HomeIcon from '@material-ui/icons/Home';
 
 export const MunchBottonMenu = () => {
     const history = useHistory()
@@ -24,17 +25,27 @@ export const MunchBottonMenu = () => {
     const goToAddPost = () => {
         history.push('/add/addPostPhoto')
     }
+    const goToHome = () => {
+        history.push('/')
+    }
     
     var isAddPostFlow = location.pathname.startsWith('/add')
+    var isLogin = location.pathname.startsWith('/login')
+    
+    if(location.pathname == '/' )
+        var home = true
+    else
+        home = false
   
 
     return (<> 
-  {isAddPostFlow ? <div /> : 
+  {isAddPostFlow || isLogin ? <div /> : 
     <AppBar className="appBar" position='fixed'>
         <Toolbar style={{marginTop:'8px'}} >
             <FlexView hAlignContent="center">
-            <IconButton className="iconBottom">
-                    <HomeOutlinedIcon/>
+            <IconButton onClick={goToHome} className="iconBottom">
+                {home ? <HomeIcon/> : <HomeOutlinedIcon/> }
+                    
                 </IconButton>
                 <IconButton onClick={goToSearch} className="iconBottom">
                     <SearchIcon  />

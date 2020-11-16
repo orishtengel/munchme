@@ -4,9 +4,13 @@ html {
   overflow: auto
 }
 body{
- /* background: linear-gradient(357deg, #ff9100, #ba33ff);   */
+ background: linear-gradient(357deg,#fff1c1, #ffe8ee); 
   height: 100%;
   overflow: auto;
+}
+.svgBoy{
+  margin-left: 2em;
+  margin-top: -2em;
 }
 
 #root {
@@ -40,13 +44,24 @@ body{
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.orange{
+  color: #ffb700;
+}
+.justify{
+  justify-content: space-between;
+}
+
+.bodyPost{
+  background: linear-gradient(45deg ,#fff1c1, #ffe8ee);
+  height: 500%;
+}
 
 .App-link {
   color: #61dafb;
 }
 .MuiContainer-root{
-  padding-left: 7px !important;
-  padding-right: 7px !important;
+  padding-left:7px !important ;
+  padding-right:7px !important;
 }
 
 @keyframes App-logo-spin {

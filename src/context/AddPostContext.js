@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 import React from 'react'
 import uuid from 'react-uuid'
+import { PostContextStore } from './PostContext'
 
  const defaultstate = {
      id : "" ,
@@ -11,7 +12,8 @@ import uuid from 'react-uuid'
      youtubeLink : "",
      ingredients : [{id:uuid()}],
      stages: [{id: uuid()}],
-     date : dayjs().format('YYYY-MM-DD')
+     date : dayjs().format('YYYY-MM-DD'),
+     makerid: ""
 }
 
 const reducer = (state,action) => {
@@ -24,27 +26,12 @@ const reducer = (state,action) => {
         case('ADD_POST_PHOTO'):
                 return {...state, firstPicture : action.firstPicture,youtubeLink : action.youtubeLink}      
         case('ADD_POST_DETAILS'):
-                if(state.id !== "")
-                    return {...state , title : action.title , level : action.level, prepTime : action.prepTime}
-                else    
-                     return {...state, id: uuid() , title : action.title , level : action.level, prepTime : action.prepTime} 
-        case('ADD_STAGE'):
-                return {...state, stages: [...state.stages, {id: uuid()}]}
-        case('EDIT_STAGE'):
-                return {...state,
-                    stages: [...state.stages.map(s => s.id == action.data.id ? action.data : s)]}
-        case 'REMOVE_STAGE':
-                return {...state, stages: [...state.stages.filter(s => s.id != action.id)]}
-        case('ADD_INGREDIENT'):
-                return {...state, ingredients: [...state.ingredients, {id : uuid()}]}    
-        case('EDIT_INGREDIENT'):
-                return {...state,
-                    ingredients: [...state.ingredients.map(s => s.id == action.data.id ? action.data : s)]}
-        case ('REMOVE_INGREDIENT'):
-                return {...state, ingredients: [...state.ingredients.filter(s => s.id != action.id)]}                      
-        default: 
-                return state;
-
+                    return {...state, title: action.data.data.title, level: action.data.data.level,
+                         prepTime: action.data.data.prepTime, ingredients: action.data.data.ingredients, makerid: action.data.makerid}
+        case('ADD_POST_STAGES'):
+                return {...state, stages: action.data.stages}
+        default:
+                return state
     }
 }    
 
@@ -52,9 +39,16 @@ export const AddPostContextStore = React.createContext(defaultstate)
 
 const AddPostContext = (props) => {
     const [state, dispatch] = React.useReducer(reducer, defaultstate)
+    const postContext = React.useContext(PostContextStore)
+
+    const share = (data) => {
+        dispatch({type : 'ADD_POST_STAGES' , data : data})
+        postContext.dispatch({type : 'ADD_POST', data : {...state , ...data} })
+
+    }
 
     return (
-        <AddPostContextStore.Provider value={{...state, dispatch}}>
+        <AddPostContextStore.Provider value={{...state, dispatch,share}}>
             {props.children}
         </AddPostContextStore.Provider>
     )

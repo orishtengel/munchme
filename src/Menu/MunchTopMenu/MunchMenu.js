@@ -10,16 +10,15 @@ const location = useLocation()
     const goToHome = () =>{
         history.push ('/')
     }
-
-    var isAddPostFlow = location.pathname.startsWith('/add')
-  
+var isAddPostFlow = location.pathname.startsWith('/add')
+var isLogin = location.pathname.startsWith('/login')
 
     return (<> 
-     {isAddPostFlow ? <div /> : 
-    <AppBar position='static'>
+     {isAddPostFlow || isLogin ? <div /> : 
+    <AppBar position='static' className="appbar">
         <FlexView onClick={goToHome} className="menu" hAlignContent = "center">
              <img className="icon" src={`${process.env.PUBLIC_URL}/logo.png`}/>
-             <img className="logo" src={`${process.env.PUBLIC_URL}/munch_logo.png`}/>
+             <img className="logo" src={`${process.env.PUBLIC_URL}/logo_new.png`}/>
         </FlexView>
     </AppBar>}
     
